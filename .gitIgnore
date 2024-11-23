@@ -118,10 +118,3 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-
-
-
-
-
-git config --global user.name "MD Al Amin Hasan"
-git config --global user.email "alaminhasanpro@gmail.com"
