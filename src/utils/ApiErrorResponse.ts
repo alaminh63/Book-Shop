@@ -4,7 +4,7 @@ export const ApiErrorResponse = (
   res?: Response,
   statusCode: number = 500,
   message: string = "An error occurred",
-  error?: any,
+  error?: any
 ) => {
   res?.status(statusCode).json({
     message,

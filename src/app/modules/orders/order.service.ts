@@ -8,6 +8,10 @@ const createOrderIntoDB = async (order: IOrder) => {
   if (!product) {
     throw new Error("Product not found");
   }
+  if (!Number.isInteger(order.quantity) || order.quantity <= 0) {
+    throw new Error("Order quantity must be a positive integer");
+  }
+
   if (product.quantity === 0) {
     product.inStock = false;
     await product.save();
