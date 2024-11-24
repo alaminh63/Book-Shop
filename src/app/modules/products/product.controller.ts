@@ -26,7 +26,7 @@ const getSingleProduct = async (req: Request, res: Response) => {
   try {
     const productId = req.params.productId;
     const result = await ProductService.getSingleProductFromDB(
-      productId as string
+      productId as string,
     );
     ApiSuccessResponse(res, 200, "User fetched successfully!", result);
   } catch (error) {
@@ -40,7 +40,7 @@ const updateSingleProduct = async (req: Request, res: Response) => {
     const data = req.body;
     const result = await ProductService.updateSingleProductFromDB(
       productId,
-      data
+      data,
     );
     ApiSuccessResponse(res, 200, "Product updated successfully!", result);
   } catch (error) {
