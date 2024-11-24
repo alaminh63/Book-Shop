@@ -51,7 +51,7 @@ const updateSingleProduct = async (req: Request, res: Response) => {
 const deleteSingleProduct = async (req: Request, res: Response) => {
   try {
     const productId = req.params.productId;
-    const result = await ProductService.deleteSingleProductFromDB(productId);
+    await ProductService.deleteSingleProductFromDB(productId);
     ApiSuccessResponse(res, 200, "Product deleted successfully!", {});
   } catch (error) {
     ApiErrorResponse(res, 500, "Failed to delete product", error);

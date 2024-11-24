@@ -1,3 +1,4 @@
+import { IProduct } from "./product.interface";
 import { Product } from "./product.model";
 
 const createProductIntoDB = async (product: IProduct) => {

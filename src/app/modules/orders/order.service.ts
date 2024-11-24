@@ -31,15 +31,14 @@ const getRevenue = async () => {
     {
       $group: {
         _id: null,
-        totalRevenue: { $sum: "$totalPrice" },
+        totalRevenue: { $sum: { $multiply: ["$quantity", "$totalPrice"] } },
       },
     },
   ]);
 
   const result = {
-    totalRevenue: dataFromDB[0]?.totalRevenue,
+    totalRevenue: dataFromDB[0]?.totalRevenue || 0,
   };
   return result;
 };
-
 export const OrderService = { createOrderIntoDB, getRevenue };
